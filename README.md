@@ -2,6 +2,12 @@
 
 ## Usage
 
+Install `create-react-app`:
+
+```bash
+npm install -g create-react-app
+```
+
 Install `cra-minimal`:
 
 ```bash
@@ -11,8 +17,16 @@ npm install -g https://github.com/ericandrewlewis/create-react-app-minimal
 Use `cra-minimal` as you would use `create-react-app` to create a project:
 
 ```bash
-## About this program
+cra-minimal my-new-react-project
 ```
+
+Uninstall if you don't like it:
+
+```bash
+npm uninstall -g cra-minimal
+```
+
+## About this program
 
 I 💚 create-react-app, but I don't always want the boilerplate files that it comes with:
 
