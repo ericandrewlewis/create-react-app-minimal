@@ -48,7 +48,9 @@ createReactAppProcess.on("close", code => {
         if (err) {
           return console.error(err);
         }
-        console.log("Complete");
+        process.stdout.write(
+          "\nReplaced create-react-app boilerplate with minimal src/ files.\n"
+        );
       }
     );
   });
