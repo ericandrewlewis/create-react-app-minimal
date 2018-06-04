@@ -41,11 +41,15 @@ createReactAppProcess.on("close", code => {
     if (err) {
       return console.error(err);
     }
-    fse.copy("minimalSrcContent", path.join(projectName, "src"), err => {
-      if (err) {
-        return console.error(err);
+    fse.copy(
+      path.join(__dirname, "minimalSrcContent"),
+      path.join(projectName, "src"),
+      err => {
+        if (err) {
+          return console.error(err);
+        }
+        console.log("Complete");
       }
-      console.log("Complete");
-    });
+    );
   });
 });
