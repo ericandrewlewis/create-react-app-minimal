@@ -21,7 +21,7 @@ const createReactAppProcess = spawn(
   argumentsForCreateReactApp
 );
 
-process.stdout.write("\n    Running create-react-app...\n");
+process.stdout.write("\nRunning create-react-app...\n");
 
 createReactAppProcess.stdout.on("data", data => {
   process.stdout.write(data);
@@ -35,7 +35,6 @@ createReactAppProcess.on("close", code => {
   if (code !== 0) {
     return;
   }
-  const filesToDelete = [""];
 
   fse.remove(path.join(projectName, "src"), err => {
     if (err) {
