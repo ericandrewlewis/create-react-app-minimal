@@ -1,5 +1,8 @@
 # Create React App Minimal setup
 
+`cra-minimal` runs `create-react-app` and then replaces the contents of the `src/`
+folder with my preferred minimal boilerplate. Read more in the About this program section below.
+
 ## Usage
 
 Install `create-react-app`:
@@ -43,6 +46,13 @@ src/
 
 This program runs `create-react-app` and replaces the contents of the `src`
 folder with [my preferred boilerplate](./minimalSrcContent):
+
+```
+src/
+├── App.css
+├── App.js
+└── index.js
+```
 
 ### `App.css` (empty file)
 
