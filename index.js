@@ -36,24 +36,19 @@ createReactAppProcess.on("close", code => {
     return;
   }
 
-  fse.remove(path.join(projectName, "src"), err => {
-    if (err) {
-      return console.error(err);
-    }
-    fse.copy(
-      path.join(__dirname, "minimalSrcContent"),
-      path.join(projectName, "src"),
-      err => {
-        if (err) {
-          return console.error(err);
-        }
-        fse.remove(path.join(projectName, "yarn.lock"), err => {
-          process.stdout.write(
-            "\n[cra-minimal] Replaced create-react-app boilerplate with minimal src/ files.\n[cra-minimal] Removed yarn.lock\n"
-          );
-        });
-
-      }
-    );
-  });
+  fse.remove(path.join(projectName, "src"))
+    .then(() => {
+      return fse.copy(
+        path.join(__dirname, "minimalSrcContent"),
+        path.join(projectName, "src")
+      );
+    })
+    .then(() => {
+      return fse.remove(path.join(projectName, "yarn.lock"));
+    })
+    .then(() => {
+      process.stdout.write(
+        "\n[cra-minimal] Replaced create-react-app boilerplate with minimal src/ files.\n[cra-minimal] Removed yarn.lock\n"
+      );
+    });
 });
