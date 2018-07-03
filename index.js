@@ -47,9 +47,12 @@ createReactAppProcess.on("close", code => {
         if (err) {
           return console.error(err);
         }
-        process.stdout.write(
-          "\nReplaced create-react-app boilerplate with minimal src/ files.\n"
-        );
+        fse.remove(path.join(projectName, "yarn.lock"), err => {
+          process.stdout.write(
+            "\n[cra-minimal] Replaced create-react-app boilerplate with minimal src/ files.\n[cra-minimal] Removed yarn.lock\n"
+          );
+        });
+
       }
     );
   });
